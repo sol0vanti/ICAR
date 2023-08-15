@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BBk-eW-XKX">
+    <device id="retina6_72" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Car Sharing-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CarSharingViewController" customModule="Car_Sharing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dbx-9Z-lFm">
+                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="A3Y-gw-IP5" customClass="CarSharingTableViewCell" customModule="Car_Sharing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A3Y-gw-IP5" id="19F-mf-Gof">
+                                            <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMW X6M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-62-UvK">
+                                                    <rect key="frame" x="149.33333333333334" y="20.666666666666671" width="101" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BMW-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-66-A6I">
+                                                    <rect key="frame" x="30" y="10" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="mOI-3m-E2g"/>
+                                                        <constraint firstAttribute="height" constant="45" id="zvT-um-OlB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDV-HB-3Fs">
+                                                    <rect key="frame" x="341.66666666666669" y="22.666666666666671" width="20" height="20"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="FI5-sZ-9Db"/>
+                                                        <constraint firstAttribute="width" constant="20" id="lcg-T9-5Vl"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bAe-66-A6I" firstAttribute="leading" secondItem="19F-mf-Gof" secondAttribute="leading" constant="30" id="3c1-39-kVF"/>
+                                                <constraint firstItem="pDV-HB-3Fs" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="KPt-XF-SSj"/>
+                                                <constraint firstItem="bAe-66-A6I" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="Kbf-Gj-e9Z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pDV-HB-3Fs" secondAttribute="trailing" constant="30" id="dTL-bv-YZG"/>
+                                                <constraint firstItem="A6F-62-UvK" firstAttribute="centerX" secondItem="19F-mf-Gof" secondAttribute="centerX" id="uAK-RI-ELh"/>
+                                                <constraint firstItem="A6F-62-UvK" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="xel-NI-X6u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="bAe-66-A6I" id="Son-9h-nXl"/>
+                                            <outlet property="indicator" destination="pDV-HB-3Fs" id="UDk-pj-V5P"/>
+                                            <outlet property="name" destination="A6F-62-UvK" id="gLe-20-4r2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="dbx-9Z-lFm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CAa-CO-Q8M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dbx-9Z-lFm" secondAttribute="bottom" id="N6m-0v-P9x"/>
+                            <constraint firstItem="dbx-9Z-lFm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VT6-ik-fY8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbx-9Z-lFm" secondAttribute="trailing" id="pMN-T5-cDv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Car Sharing" largeTitleDisplayMode="always" id="YJ1-g2-hmp"/>
+                    <connections>
+                        <outlet property="table" destination="dbx-9Z-lFm" id="ARN-fe-xqm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043.5114503816794" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MnL-pr-OI5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BBk-eW-XKX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tyB-c0-HWX">
+                        <rect key="frame" x="0.0" y="59" width="430" height="105.66666666666666"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2FS-oe-FA6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t99-5N-zLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BMW-Logo" width="1080" height="1080"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
