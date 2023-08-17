@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dbx-9Z-lFm">
-                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
+                                <rect key="frame" x="0.0" y="113" width="430" height="785"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="A3Y-gw-IP5" customClass="CarSharingTableViewCell" customModule="Car_Sharing" customModuleProvider="target">
@@ -27,17 +27,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMW X6M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-62-UvK">
-                                                    <rect key="frame" x="149.33333333333334" y="20.666666666666671" width="101" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMW X6M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-62-UvK">
+                                                    <rect key="frame" x="89.999999999999986" y="20.666666666666671" width="241.66666666666663" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BMW-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-66-A6I">
-                                                    <rect key="frame" x="30" y="10" width="45" height="45"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PORSCHE" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-66-A6I">
+                                                    <rect key="frame" x="30" y="7.6666666666666643" width="40" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="45" id="mOI-3m-E2g"/>
-                                                        <constraint firstAttribute="height" constant="45" id="zvT-um-OlB"/>
+                                                        <constraint firstAttribute="width" constant="40" id="mOI-3m-E2g"/>
+                                                        <constraint firstAttribute="height" constant="50" id="zvT-um-OlB"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDV-HB-3Fs">
@@ -51,11 +51,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bAe-66-A6I" firstAttribute="leading" secondItem="19F-mf-Gof" secondAttribute="leading" constant="30" id="3c1-39-kVF"/>
+                                                <constraint firstItem="pDV-HB-3Fs" firstAttribute="leading" secondItem="A6F-62-UvK" secondAttribute="trailing" constant="10" id="4kD-8E-yCG"/>
+                                                <constraint firstItem="A6F-62-UvK" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="7o4-gj-6eN"/>
                                                 <constraint firstItem="pDV-HB-3Fs" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="KPt-XF-SSj"/>
                                                 <constraint firstItem="bAe-66-A6I" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="Kbf-Gj-e9Z"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pDV-HB-3Fs" secondAttribute="trailing" constant="30" id="dTL-bv-YZG"/>
-                                                <constraint firstItem="A6F-62-UvK" firstAttribute="centerX" secondItem="19F-mf-Gof" secondAttribute="centerX" id="uAK-RI-ELh"/>
-                                                <constraint firstItem="A6F-62-UvK" firstAttribute="centerY" secondItem="19F-mf-Gof" secondAttribute="centerY" id="xel-NI-X6u"/>
+                                                <constraint firstItem="A6F-62-UvK" firstAttribute="leading" secondItem="bAe-66-A6I" secondAttribute="trailing" constant="20" id="rfb-SV-xtF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -69,10 +70,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="dbx-9Z-lFm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CAa-CO-Q8M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dbx-9Z-lFm" secondAttribute="bottom" id="N6m-0v-P9x"/>
                             <constraint firstItem="dbx-9Z-lFm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VT6-ik-fY8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbx-9Z-lFm" secondAttribute="trailing" id="pMN-T5-cDv"/>
+                            <constraint firstItem="dbx-9Z-lFm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wrP-cl-Plq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Car Sharing" largeTitleDisplayMode="always" id="YJ1-g2-hmp"/>
@@ -82,7 +83,116 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043.5114503816794" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1042.3255813953488" y="-2.5751072961373391"/>
+        </scene>
+        <!--New Car-->
+        <scene sceneID="wt2-1P-vYs">
+            <objects>
+                <viewController id="Apn-DH-a9e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Npt-bn-qHk">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BMW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-YH-K7q">
+                                <rect key="frame" x="40" y="175" width="350" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HPm-mx-VdB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the car." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbg-Xn-8Ma">
+                                <rect key="frame" x="40" y="235" width="350" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="A1N-qf-mpz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Zy-Ebr">
+                                <rect key="frame" x="40" y="315" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="XCK-lm-yH2"/>
+                                    <constraint firstAttribute="height" constant="100" id="uMp-VK-oQn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="MERCEDES" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-r5-fMT">
+                                <rect key="frame" x="175" y="315" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2Zf-gf-rMj"/>
+                                    <constraint firstAttribute="height" constant="100" id="5Rz-SD-GNO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="PORSCHE" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgP-AE-2kR">
+                                <rect key="frame" x="310" y="315" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="dXd-jF-VaO"/>
+                                    <constraint firstAttribute="height" constant="100" id="ogP-Ln-G9H"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="FERRARI" imageContentMode="scaleAspectFill"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-OD-Tua">
+                                <rect key="frame" x="40" y="838" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yib-q9-1y4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSG-Dz-y65">
+                                <rect key="frame" x="40" y="435" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="e9l-f0-Yf9"/>
+                                    <constraint firstAttribute="height" constant="100" id="iWE-aP-koe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="BMW" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tBi-zh-Hld"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="wgP-AE-2kR" secondAttribute="trailing" constant="40" id="25s-eU-ouS"/>
+                            <constraint firstItem="cxo-Zy-Ebr" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="3A6-aI-xd7"/>
+                            <constraint firstItem="wgP-AE-2kR" firstAttribute="top" secondItem="Mbg-Xn-8Ma" secondAttribute="bottom" constant="40" id="4np-Xg-Yc0"/>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="bYf-OD-Tua" secondAttribute="trailing" constant="40" id="6Lr-gz-Yi6"/>
+                            <constraint firstItem="cxo-Zy-Ebr" firstAttribute="top" secondItem="Mbg-Xn-8Ma" secondAttribute="bottom" constant="40" id="6OX-7X-1kS"/>
+                            <constraint firstItem="Mbg-Xn-8Ma" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="Be1-CN-UBb"/>
+                            <constraint firstItem="KSG-Dz-y65" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="Iu3-RO-KT6"/>
+                            <constraint firstItem="KSG-Dz-y65" firstAttribute="top" secondItem="cxo-Zy-Ebr" secondAttribute="bottom" constant="20" id="PTZ-Jv-qV8"/>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="bottom" secondItem="bYf-OD-Tua" secondAttribute="bottom" constant="20" id="RTD-7f-fJR"/>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="Xi5-YH-K7q" secondAttribute="trailing" constant="40" id="V65-7W-BHk"/>
+                            <constraint firstItem="Mbg-Xn-8Ma" firstAttribute="top" secondItem="Xi5-YH-K7q" secondAttribute="bottom" constant="20" id="dMx-0h-d9t"/>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="Mbg-Xn-8Ma" secondAttribute="trailing" constant="40" id="fqb-nz-owD"/>
+                            <constraint firstItem="Geg-r5-fMT" firstAttribute="top" secondItem="Mbg-Xn-8Ma" secondAttribute="bottom" constant="40" id="pLy-Oa-1UU"/>
+                            <constraint firstItem="Geg-r5-fMT" firstAttribute="centerX" secondItem="Npt-bn-qHk" secondAttribute="centerX" id="rTD-Qq-aAe"/>
+                            <constraint firstItem="bYf-OD-Tua" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="sPH-dy-StP"/>
+                            <constraint firstItem="Xi5-YH-K7q" firstAttribute="top" secondItem="tBi-zh-Hld" secondAttribute="top" constant="20" id="vVS-nK-eCG"/>
+                            <constraint firstItem="Xi5-YH-K7q" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="xyq-Ip-eBU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Car" id="1yW-8U-vlO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8l-fJ-a0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014.4186046511628" y="-750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MnL-pr-OI5">
@@ -94,6 +204,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
@@ -108,11 +219,38 @@
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CdN-ah-EI2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUm-t7-xGT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rC7-lM-3pP">
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Apn-DH-a9e" kind="relationship" relationship="rootViewController" id="Kl3-Kw-lBw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAX-GO-WlS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.81395348837209" y="-750"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="BMW-Logo" width="1080" height="1080"/>
+        <image name="BMW" width="1080" height="1080"/>
+        <image name="FERRARI" width="1200" height="1200"/>
+        <image name="MERCEDES" width="3500" height="3500"/>
+        <image name="PORSCHE" width="781" height="1020"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
