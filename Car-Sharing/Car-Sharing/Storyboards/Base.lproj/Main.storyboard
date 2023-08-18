@@ -88,12 +88,12 @@
         <!--New Car-->
         <scene sceneID="wt2-1P-vYs">
             <objects>
-                <viewController id="Apn-DH-a9e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarSharingDetailViewController" id="Apn-DH-a9e" customClass="CarSharingDetailViewController" customModule="Car_Sharing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Npt-bn-qHk">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BMW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-YH-K7q">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MERCEDES" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-YH-K7q">
                                 <rect key="frame" x="40" y="175" width="350" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
@@ -111,7 +111,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Zy-Ebr">
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Zy-Ebr">
                                 <rect key="frame" x="40" y="315" width="80" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="XCK-lm-yH2"/>
@@ -121,6 +121,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="MERCEDES" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="brandButtonsClicked:" destination="Apn-DH-a9e" eventType="touchUpInside" id="uYX-Ob-k9f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-r5-fMT">
                                 <rect key="frame" x="175" y="315" width="80" height="100"/>
@@ -132,6 +135,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="PORSCHE" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="brandButtonsClicked:" destination="Apn-DH-a9e" eventType="touchUpInside" id="rqZ-X6-y6Y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgP-AE-2kR">
                                 <rect key="frame" x="310" y="315" width="80" height="100"/>
@@ -143,16 +149,25 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="FERRARI" imageContentMode="scaleAspectFill"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="brandButtonsClicked:" destination="Apn-DH-a9e" eventType="touchUpInside" id="N7r-mr-NRp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-OD-Tua">
                                 <rect key="frame" x="40" y="838" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Yib-q9-1y4"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Continue">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueButtonClicked:" destination="Apn-DH-a9e" eventType="touchUpInside" id="Ky6-tu-yxM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSG-Dz-y65">
                                 <rect key="frame" x="40" y="435" width="80" height="100"/>
@@ -164,7 +179,16 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="BMW" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="brandButtonsClicked:" destination="Apn-DH-a9e" eventType="touchUpInside" id="gVU-We-9U6"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-4Q-Cje">
+                                <rect key="frame" x="40" y="808.66666666666663" width="350" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tBi-zh-Hld"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -179,16 +203,33 @@
                             <constraint firstItem="KSG-Dz-y65" firstAttribute="top" secondItem="cxo-Zy-Ebr" secondAttribute="bottom" constant="20" id="PTZ-Jv-qV8"/>
                             <constraint firstItem="tBi-zh-Hld" firstAttribute="bottom" secondItem="bYf-OD-Tua" secondAttribute="bottom" constant="20" id="RTD-7f-fJR"/>
                             <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="Xi5-YH-K7q" secondAttribute="trailing" constant="40" id="V65-7W-BHk"/>
+                            <constraint firstItem="bYf-OD-Tua" firstAttribute="top" secondItem="gaE-4Q-Cje" secondAttribute="bottom" constant="10" id="b5c-Bo-Ynb"/>
                             <constraint firstItem="Mbg-Xn-8Ma" firstAttribute="top" secondItem="Xi5-YH-K7q" secondAttribute="bottom" constant="20" id="dMx-0h-d9t"/>
                             <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="Mbg-Xn-8Ma" secondAttribute="trailing" constant="40" id="fqb-nz-owD"/>
+                            <constraint firstItem="tBi-zh-Hld" firstAttribute="trailing" secondItem="gaE-4Q-Cje" secondAttribute="trailing" constant="40" id="me6-8D-Pcs"/>
                             <constraint firstItem="Geg-r5-fMT" firstAttribute="top" secondItem="Mbg-Xn-8Ma" secondAttribute="bottom" constant="40" id="pLy-Oa-1UU"/>
                             <constraint firstItem="Geg-r5-fMT" firstAttribute="centerX" secondItem="Npt-bn-qHk" secondAttribute="centerX" id="rTD-Qq-aAe"/>
+                            <constraint firstItem="gaE-4Q-Cje" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="rlA-al-HyD"/>
                             <constraint firstItem="bYf-OD-Tua" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="sPH-dy-StP"/>
                             <constraint firstItem="Xi5-YH-K7q" firstAttribute="top" secondItem="tBi-zh-Hld" secondAttribute="top" constant="20" id="vVS-nK-eCG"/>
                             <constraint firstItem="Xi5-YH-K7q" firstAttribute="leading" secondItem="tBi-zh-Hld" secondAttribute="leading" constant="40" id="xyq-Ip-eBU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Car" id="1yW-8U-vlO"/>
+                    <connections>
+                        <outlet property="bmwButton" destination="KSG-Dz-y65" id="Nyh-tI-ozo"/>
+                        <outlet property="brandTextField" destination="Xi5-YH-K7q" id="xrp-eK-hmb"/>
+                        <outlet property="continueButton" destination="bYf-OD-Tua" id="EBR-6M-t2B"/>
+                        <outlet property="errorLabel" destination="gaE-4Q-Cje" id="mrE-hu-zj5"/>
+                        <outlet property="ferrariButton" destination="wgP-AE-2kR" id="SGU-E0-gNV"/>
+                        <outlet property="mercedesButton" destination="cxo-Zy-Ebr" id="skM-lL-mqz"/>
+                        <outlet property="modelTextField" destination="Mbg-Xn-8Ma" id="d8y-Jm-abX"/>
+                        <outlet property="porscheButton" destination="Geg-r5-fMT" id="7Ip-VA-RLw"/>
+                        <outletCollection property="brandButtons" destination="cxo-Zy-Ebr" collectionClass="NSMutableArray" id="jks-Oy-ccr"/>
+                        <outletCollection property="brandButtons" destination="Geg-r5-fMT" collectionClass="NSMutableArray" id="hMU-RT-ydY"/>
+                        <outletCollection property="brandButtons" destination="wgP-AE-2kR" collectionClass="NSMutableArray" id="kYI-oe-Lg1"/>
+                        <outletCollection property="brandButtons" destination="KSG-Dz-y65" collectionClass="NSMutableArray" id="0xO-VO-MlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8l-fJ-a0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,6 +295,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,6 +25,7 @@
 		FA282DB92A8AAD8400E7D74B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FA282DB82A8AAD8400E7D74B /* FirebaseRemoteConfig */; };
 		FA282DBB2A8AAD8400E7D74B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA282DBA2A8AAD8400E7D74B /* FirebaseStorage */; };
 		FA282DBD2A8AAD8500E7D74B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA282DBC2A8AAD8500E7D74B /* FirebaseStorageCombine-Community */; };
+		FA5C4BB62A8FACEA00B418A8 /* CarSharingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BB52A8FACEA00B418A8 /* CarSharingDetailViewController.swift */; };
 		FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		FA282D972A8AAAB500E7D74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA282D992A8AAAB500E7D74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA282DA52A8AACD100E7D74B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA5C4BB52A8FACEA00B418A8 /* CarSharingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingDetailViewController.swift; sourceTree = "<group>"; };
 		FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,8 +105,8 @@
 		FA282DA02A8AAAD700E7D74B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA282D8F2A8AAAB400E7D74B /* CarSharingViewController.swift */,
-				FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */,
+				FA5C4BB72A8FACF900B418A8 /* MainScreen */,
+				FA5C4BB82A8FAD5800B418A8 /* DetailScreen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -141,6 +143,23 @@
 				FA282D8D2A8AAAB400E7D74B /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		FA5C4BB72A8FACF900B418A8 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA282D8F2A8AAAB400E7D74B /* CarSharingViewController.swift */,
+				FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		FA5C4BB82A8FAD5800B418A8 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA5C4BB52A8FACEA00B418A8 /* CarSharingDetailViewController.swift */,
+			);
+			path = DetailScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +253,7 @@
 				FA282D902A8AAAB400E7D74B /* CarSharingViewController.swift in Sources */,
 				FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */,
 				FA282D8C2A8AAAB400E7D74B /* AppDelegate.swift in Sources */,
+				FA5C4BB62A8FACEA00B418A8 /* CarSharingDetailViewController.swift in Sources */,
 				FA282D8E2A8AAAB400E7D74B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
