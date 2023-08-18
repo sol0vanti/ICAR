@@ -22,7 +22,7 @@ class CarSharingDetailViewController: UIViewController {
     }
     
     @IBAction func continueButtonClicked(_ sender: UIButton){
-        if modelTextField.text!.count <= 2 {
+        if modelTextField.text!.count < 2 {
             modelTextField.layer.borderWidth = 1.5
             modelTextField.layer.borderColor = UIColor.systemRed.cgColor
             errorLabel.isHidden = false
@@ -31,13 +31,18 @@ class CarSharingDetailViewController: UIViewController {
             let database = Firestore.firestore()
             database.collection("cars").addDocument(data: [
                 "brand": brandTextField.placeholder!,
-                "model": modelTextField.text!
+                "model": modelTextField.text!,
+                "indicator": "on"
             ]) { (error) in
                 if error != nil {
                     self.errorLabel.isHidden = false
                     self.errorLabel.text = "Error: database isn't working now. Please, try again later"
                 } else {
-                    self.navigationController?.popToRootViewController(animated: true)
+                    let ac = UIAlertController(title: "Success", message: "You have just succefully added new car", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    })
+                    self.present(ac, animated: true)
                 }
             }
         }
