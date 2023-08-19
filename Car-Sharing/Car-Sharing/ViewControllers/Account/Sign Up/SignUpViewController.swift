@@ -10,17 +10,18 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        navigationController?.navigationBar.tintColor = .systemCyan
     }
     @IBAction func logInButtonClicked(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
     }
     @IBAction func signUpButtonClicked(_ sender: UIButton) {
-    }
-    
-    func showError(_ text: String){
-        errorLabel.isHidden = false
-        errorLabel.text = text
+        Helping.checkTextFields(errorLabel: errorLabel, nicknameField: nicknameTextField, passwordField: passwordTextField, confirmationField: confirmationTextField)
+        let ac = UIAlertController(title: "Success", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
+            let destVC = self.storyboard?.instantiateViewController(withIdentifier: "CarSharingViewController") as? CarSharingViewController
+            self.navigationController?.pushViewController(destVC!, animated: true)
+        })
+        present(ac, animated: true)
     }
 }

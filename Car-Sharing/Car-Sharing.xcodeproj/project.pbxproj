@@ -30,6 +30,8 @@
 		FA5C4BBC2A8FDA0200B418A8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BBB2A8FDA0200B418A8 /* TabBarViewController.swift */; };
 		FA5C4BC12A91356800B418A8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BC02A91356800B418A8 /* SignUpViewController.swift */; };
 		FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */; };
+		FAD51B222A913BCD00B5545F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD51B212A913BCD00B5545F /* LogInViewController.swift */; };
+		FAD51B242A913E8D00B5545F /* Helping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD51B232A913E8D00B5545F /* Helping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		FA5C4BBB2A8FDA0200B418A8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA5C4BC02A91356800B418A8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingTableViewCell.swift; sourceTree = "<group>"; };
+		FAD51B212A913BCD00B5545F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FAD51B232A913E8D00B5545F /* Helping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helping.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		FA282DA12A8AAAE100E7D74B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				FAD51B232A913E8D00B5545F /* Helping.swift */,
 				FA282DA32A8AAAF100E7D74B /* Assets */,
 				FA282DA22A8AAAEB00E7D74B /* Firebase */,
 			);
@@ -183,6 +188,7 @@
 		FA5C4BBE2A91353800B418A8 /* Log In */ = {
 			isa = PBXGroup;
 			children = (
+				FAD51B212A913BCD00B5545F /* LogInViewController.swift */,
 			);
 			path = "Log In";
 			sourceTree = "<group>";
@@ -285,10 +291,12 @@
 			files = (
 				FA282D902A8AAAB400E7D74B /* CarSharingViewController.swift in Sources */,
 				FA5C4BBA2A8FC6F400B418A8 /* Request.swift in Sources */,
+				FAD51B222A913BCD00B5545F /* LogInViewController.swift in Sources */,
 				FA5C4BC12A91356800B418A8 /* SignUpViewController.swift in Sources */,
 				FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */,
 				FA282D8C2A8AAAB400E7D74B /* AppDelegate.swift in Sources */,
 				FA5C4BBC2A8FDA0200B418A8 /* TabBarViewController.swift in Sources */,
+				FAD51B242A913E8D00B5545F /* Helping.swift in Sources */,
 				FA5C4BB62A8FACEA00B418A8 /* CarSharingDetailViewController.swift in Sources */,
 				FA282D8E2A8AAAB400E7D74B /* SceneDelegate.swift in Sources */,
 			);
