@@ -27,6 +27,7 @@
 		FA282DBD2A8AAD8500E7D74B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA282DBC2A8AAD8500E7D74B /* FirebaseStorageCombine-Community */; };
 		FA5C4BB62A8FACEA00B418A8 /* CarSharingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BB52A8FACEA00B418A8 /* CarSharingDetailViewController.swift */; };
 		FA5C4BBA2A8FC6F400B418A8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BB92A8FC6F400B418A8 /* Request.swift */; };
+		FA5C4BBC2A8FDA0200B418A8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4BBB2A8FDA0200B418A8 /* TabBarViewController.swift */; };
 		FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		FA282DA52A8AACD100E7D74B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5C4BB52A8FACEA00B418A8 /* CarSharingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingDetailViewController.swift; sourceTree = "<group>"; };
 		FA5C4BB92A8FC6F400B418A8 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FA5C4BBB2A8FDA0200B418A8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			children = (
 				FA282D8F2A8AAAB400E7D74B /* CarSharingViewController.swift */,
 				FA9CC3FF2A8BE4E900FF6DE4 /* CarSharingTableViewCell.swift */,
+				FA5C4BBB2A8FDA0200B418A8 /* TabBarViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				FA5C4BBA2A8FC6F400B418A8 /* Request.swift in Sources */,
 				FA9CC4002A8BE4EA00FF6DE4 /* CarSharingTableViewCell.swift in Sources */,
 				FA282D8C2A8AAAB400E7D74B /* AppDelegate.swift in Sources */,
+				FA5C4BBC2A8FDA0200B418A8 /* TabBarViewController.swift in Sources */,
 				FA5C4BB62A8FACEA00B418A8 /* CarSharingDetailViewController.swift in Sources */,
 				FA282D8E2A8AAAB400E7D74B /* SceneDelegate.swift in Sources */,
 			);

@@ -82,51 +82,59 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request = requests[indexPath.row]
         
-        if request.indicator == "on" {
-            let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to borrow?", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "No", style: .destructive))
-            ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
-                let database = Firestore.firestore()
-                database.collection("cars")
-                    .whereField("nickname", isEqualTo: "")
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
-                            ac.addAction(UIAlertAction(title: "OK", style: .default))
-                            self.present(ac, animated: true)
-                        } else {
-                            let document = querySnapshot!.documents.first
-                            document?.reference.updateData([
-                                "indicator": "off"
-                            ])
+        let ac = UIAlertController(title: "Choose", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Borrow / Return", style: .default){_ in
+            if request.indicator == "on" {
+                let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to borrow?", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "No", style: .destructive))
+                ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
+                    let database = Firestore.firestore()
+                    database.collection("cars")
+                        .whereField("nickname", isEqualTo: "")
+                        .getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
+                                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                                self.present(ac, animated: true)
+                            } else {
+                                let document = querySnapshot!.documents.first
+                                document?.reference.updateData([
+                                    "indicator": "off"
+                                ])
+                            }
                         }
-                    }
-                self.table.reloadData()
-            })
-            present(ac, animated: true)
-        } else if request.indicator == "off" {
-            let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to return?", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "No", style: .destructive))
-            ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
-                let database = Firestore.firestore()
-                database.collection("cars")
-                    .whereField("nickname", isEqualTo: "")
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
-                            ac.addAction(UIAlertAction(title: "OK", style: .default))
-                            self.present(ac, animated: true)
-                        } else {
-                            let document = querySnapshot!.documents.first
-                            document?.reference.updateData([
-                                "indicator": "on"
-                            ])
+                    self.table.reloadData()
+                })
+                self.present(ac, animated: true)
+            } else if request.indicator == "off" {
+                let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to return?", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "No", style: .destructive))
+                ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
+                    let database = Firestore.firestore()
+                    database.collection("cars")
+                        .whereField("nickname", isEqualTo: "")
+                        .getDocuments() { (querySnapshot, error) in
+                            if error != nil {
+                                let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
+                                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                                self.present(ac, animated: true)
+                            } else {
+                                let document = querySnapshot!.documents.first
+                                document?.reference.updateData([
+                                    "indicator": "on"
+                                ])
+                            }
                         }
-                    }
-                self.table.reloadData()
-            })
-            present(ac, animated: true)
-        }
+                    self.table.reloadData()
+                })
+                self.present(ac, animated: true)
+            }
+        })
+        ac.addAction(UIAlertAction(title: "Delete", style: .destructive){_ in
+            
+        })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
