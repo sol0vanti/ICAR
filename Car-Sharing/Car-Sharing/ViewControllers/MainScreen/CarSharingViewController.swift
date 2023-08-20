@@ -70,11 +70,15 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
             cell.logo.image = UIImage(named: "PORSCHE")
         } else if request.brand == "FERRARI" {
             cell.logo.image = UIImage(named: "FERRARI")
+        } else {
+            cell.logo.image = nil
         }
         if request.indicator == "on" {
             cell.indicator.backgroundColor = .systemGreen
         } else if request.indicator == "off" {
             cell.indicator.backgroundColor = .systemRed
+        } else {
+            cell.indicator.backgroundColor = .systemYellow
         }
         return cell
     }

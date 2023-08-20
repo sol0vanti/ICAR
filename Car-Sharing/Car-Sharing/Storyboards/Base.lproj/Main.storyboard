@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Car Sharing-->
+        <!--Car Sharing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="CarSharingViewController" id="BYZ-38-t0r" customClass="CarSharingViewController" customModule="Car_Sharing" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,13 +27,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMW X6M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-62-UvK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-62-UvK">
                                                     <rect key="frame" x="89.999999999999986" y="20.666666666666664" width="241.66666666666663" height="23.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PORSCHE" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-66-A6I">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-66-A6I">
                                                     <rect key="frame" x="30" y="7.6666666666666643" width="40" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="mOI-3m-E2g"/>
@@ -42,7 +42,7 @@
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDV-HB-3Fs">
                                                     <rect key="frame" x="341.66666666666669" y="22.666666666666671" width="20" height="20"/>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="FI5-sZ-9Db"/>
                                                         <constraint firstAttribute="width" constant="20" id="lcg-T9-5Vl"/>
@@ -103,7 +103,7 @@
                             <constraint firstItem="cAa-a2-dob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xfa-JO-g6f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Car Sharing" largeTitleDisplayMode="always" id="YJ1-g2-hmp"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="YJ1-g2-hmp"/>
                     <connections>
                         <outlet property="table" destination="dbx-9Z-lFm" id="ARN-fe-xqm"/>
                     </connections>
@@ -276,7 +276,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkF-9D-KyI">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkF-9D-KyI">
                                 <rect key="frame" x="20" y="349.33333333333331" width="390" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
@@ -375,8 +375,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="a6T-zM-Tfq"/>
                     <connections>
+                        <outlet property="emailTextField" destination="fkF-9D-KyI" id="ehg-A9-FJp"/>
                         <outlet property="errorLabel" destination="qqU-VJ-zmj" id="Xcq-ct-NZp"/>
                         <outlet property="logInButton" destination="vCt-yV-bDc" id="Y4H-jq-MYh"/>
+                        <outlet property="passwordTextField" destination="g0A-cI-Efr" id="lAL-lv-Ukr"/>
                         <outlet property="signUpButton" destination="dEq-ei-JO6" id="xrj-Of-nnA"/>
                     </connections>
                 </viewController>
@@ -471,7 +473,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-BJ-hXj">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-BJ-hXj">
                                 <rect key="frame" x="20" y="349.33333333333331" width="390" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
@@ -482,7 +484,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sC-qn-9OZ">
-                                <rect key="frame" x="20" y="409.33333333333331" width="390" height="40"/>
+                                <rect key="frame" x="20" y="404.33333333333331" width="390" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                                 <constraints>
@@ -498,7 +500,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bz-GT-aKK">
-                                <rect key="frame" x="20" y="529.33333333333337" width="390" height="40"/>
+                                <rect key="frame" x="20" y="524.33333333333337" width="390" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IIA-8c-uh7"/>
                                 </constraints>
@@ -535,13 +537,13 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX3-6K-wus">
-                                <rect key="frame" x="20" y="579.33333333333337" width="390" height="17"/>
+                                <rect key="frame" x="20" y="574.33333333333337" width="390" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-Fz-Rcs">
-                                <rect key="frame" x="20" y="469.33333333333331" width="390" height="40"/>
+                                <rect key="frame" x="20" y="464.33333333333331" width="390" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                                 <constraints>
@@ -561,7 +563,7 @@
                             <constraint firstItem="UX3-6K-wus" firstAttribute="leading" secondItem="gPd-9a-Sl1" secondAttribute="leading" constant="20" id="41E-xY-5oY"/>
                             <constraint firstItem="gPd-9a-Sl1" firstAttribute="bottom" secondItem="tUL-GG-UNt" secondAttribute="bottom" constant="20" id="5HW-8g-g94"/>
                             <constraint firstItem="UX3-6K-wus" firstAttribute="top" secondItem="5bz-GT-aKK" secondAttribute="bottom" constant="10" id="7xm-Jx-I0u"/>
-                            <constraint firstItem="6sC-qn-9OZ" firstAttribute="top" secondItem="gzk-BJ-hXj" secondAttribute="bottom" constant="20" id="Ciu-Q4-VAN"/>
+                            <constraint firstItem="6sC-qn-9OZ" firstAttribute="top" secondItem="gzk-BJ-hXj" secondAttribute="bottom" constant="15" id="Ciu-Q4-VAN"/>
                             <constraint firstItem="tUL-GG-UNt" firstAttribute="top" secondItem="JYZ-pT-ONP" secondAttribute="bottom" id="EuR-7L-xid"/>
                             <constraint firstItem="gPd-9a-Sl1" firstAttribute="trailing" secondItem="UX3-6K-wus" secondAttribute="trailing" constant="20" id="J1K-al-asA"/>
                             <constraint firstItem="5bz-GT-aKK" firstAttribute="top" secondItem="fgq-Fz-Rcs" secondAttribute="bottom" constant="20" id="JIy-g9-YKc"/>
@@ -585,9 +587,9 @@
                     <navigationItem key="navigationItem" id="3rE-I1-1HN"/>
                     <connections>
                         <outlet property="confirmationTextField" destination="fgq-Fz-Rcs" id="YOc-WB-qHJ"/>
+                        <outlet property="emailTextField" destination="gzk-BJ-hXj" id="uvD-wm-O3T"/>
                         <outlet property="errorLabel" destination="UX3-6K-wus" id="MBz-Rq-3di"/>
                         <outlet property="logInButton" destination="tUL-GG-UNt" id="pxf-gc-UUT"/>
-                        <outlet property="nicknameTextField" destination="gzk-BJ-hXj" id="uvD-wm-O3T"/>
                         <outlet property="passwordTextField" destination="6sC-qn-9OZ" id="FgW-eB-Qns"/>
                         <outlet property="signUpButton" destination="5bz-GT-aKK" id="xV7-zp-TCu"/>
                     </connections>
@@ -634,11 +636,11 @@
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
