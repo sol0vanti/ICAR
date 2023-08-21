@@ -45,7 +45,6 @@ class SignUpViewController: UIViewController {
                 let ac = UIAlertController(title: "Success", message: "Your account was successfuly created and now you are free to use it.", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
                     let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarSharingViewController") as! CarSharingViewController
-                    destVC.userEmail = email
                     self.navigationController?.pushViewController(destVC, animated: true)
                 })
                 self.present(ac, animated: true)

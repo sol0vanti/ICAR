@@ -28,14 +28,17 @@ class LogInViewController: UIViewController {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        // Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
             if error != nil {
-                Helping.showError(text: error!.localizedDescription, label: self.errorLabel, textFields: [self.emailTextField, self.passwordTextField])
+                // Couldn't sign in
+                self.errorLabel.text = error!.localizedDescription
+                self.errorLabel.alpha = 1
             }
             else {
+                
                 let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarSharingViewController") as! CarSharingViewController
-                destVC.userEmail = self.emailTextField.text
                 self.navigationController?.pushViewController(destVC, animated: true)
             }
         }
