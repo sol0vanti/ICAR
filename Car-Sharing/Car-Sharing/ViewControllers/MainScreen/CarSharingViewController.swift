@@ -5,6 +5,7 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var table: UITableView!
     var requests: [Request]!
     var indexPath: IndexPath!
+    var userEmail: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            Request(id: d.documentID, brand: d["brand"] as? String ?? "brand", model: d["model"] as? String ?? "model", indicator: d["indicator"] as? String ?? "on")
+                            Request(id: d.documentID, email: d["email"] as? String ?? "test@Test.com", brand: d["brand"] as? [String] ?? ["brand"], model: d["model"] as? [String] ?? ["model"], indicator: d["indicator"] as? [String] ?? ["off"])
                         }
                         self.table.reloadData()
                     }
@@ -61,25 +62,36 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CarSharingTableViewCell
         cell.indicator.layer.cornerRadius = 10;
         cell.indicator.layer.masksToBounds = true;
-        cell.name.text = "\(request.brand) \(request.model)"
-        if request.brand == "MERCEDES" {
-            cell.logo.image = UIImage(named: "MERCEDES")
-        } else if request.brand == "BMW" {
-            cell.logo.image = UIImage(named: "BMW")
-        } else if request.brand == "PORSCHE" {
-            cell.logo.image = UIImage(named: "PORSCHE")
-        } else if request.brand == "FERRARI" {
-            cell.logo.image = UIImage(named: "FERRARI")
-        } else {
-            cell.logo.image = nil
-        }
-        if request.indicator == "on" {
-            cell.indicator.backgroundColor = .systemGreen
-        } else if request.indicator == "off" {
-            cell.indicator.backgroundColor = .systemRed
-        } else {
-            cell.indicator.backgroundColor = .systemYellow
-        }
+        let database = Firestore.firestore()
+        database.collection("cars")
+            .whereField("email", isEqualTo: userEmail!)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    let ac = UIAlertController(title: "Error", message: "Can't load cars data.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                } else {
+                    cell.name.text = "\(request.brand[indexPath.row]) \(request.model[indexPath.row])"
+                    if request.brand[indexPath.row] == "MERCEDES" {
+                        cell.logo.image = UIImage(named: "MERCEDES")
+                    } else if request.brand[indexPath.row] == "BMW" {
+                        cell.logo.image = UIImage(named: "BMW")
+                    } else if request.brand[indexPath.row] == "PORSCHE" {
+                        cell.logo.image = UIImage(named: "PORSCHE")
+                    } else if request.brand[indexPath.row] == "FERRARI" {
+                        cell.logo.image = UIImage(named: "FERRARI")
+                    } else {
+                        cell.logo.image = nil
+                    }
+                    if request.indicator[indexPath.row] == "on" {
+                        cell.indicator.backgroundColor = .systemGreen
+                    } else if request.indicator[indexPath.row] == "off" {
+                        cell.indicator.backgroundColor = .systemRed
+                    } else {
+                        cell.indicator.backgroundColor = .systemYellow
+                    }
+                }
+            }
         return cell
     }
     
@@ -88,13 +100,13 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
         
         let ac = UIAlertController(title: "Choose", message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Borrow / Return", style: .default){_ in
-            if request.indicator == "on" {
+            if request.indicator[indexPath.row] == "on" {
                 let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to borrow?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "No", style: .destructive))
                 ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
                     let database = Firestore.firestore()
                     database.collection("cars")
-                        .whereField("nickname", isEqualTo: "")
+                        .whereField("email", isEqualTo: self.userEmail!)
                         .getDocuments() { (querySnapshot, err) in
                             if let err = err {
                                 let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
@@ -110,13 +122,13 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
                     self.table.reloadData()
                 })
                 self.present(ac, animated: true)
-            } else if request.indicator == "off" {
+            } else if request.indicator[indexPath.row] == "off" {
                 let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to return?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "No", style: .destructive))
                 ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
                     let database = Firestore.firestore()
                     database.collection("cars")
-                        .whereField("nickname", isEqualTo: "")
+                        .whereField("email", isEqualTo: self.userEmail!)
                         .getDocuments() { (querySnapshot, error) in
                             if error != nil {
                                 let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
