@@ -28,23 +28,37 @@ class CarSharingDetailViewController: UIViewController {
             errorLabel.isHidden = false
             errorLabel.text = "Please, mention the model of the car. Try again later."
         } else {
-            let database = Firestore.firestore()
-            database.collection("cars").addDocument(data: [
-                "brand": brandTextField.placeholder!,
-                "model": modelTextField.text!,
-                "indicator": "on"
-            ]) { (error) in
-                if error != nil {
-                    self.errorLabel.isHidden = false
-                    self.errorLabel.text = "Error: database isn't working now. Please, try again later"
-                } else {
-                    let ac = UIAlertController(title: "Success", message: "You have just succefully added new car", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
-                        self.navigationController?.popToRootViewController(animated: true)
-                    })
-                    self.present(ac, animated: true)
-                }
-            }
+//            database.collection("cars").addDocument(data: [
+//                "brand": brandTextField.placeholder!,
+//                "model": modelTextField.text!,
+//                "indicator": "on"
+//            ]) { (error) in
+//                if error != nil {
+//                    self.errorLabel.isHidden = false
+//                    self.errorLabel.text = "Error: database isn't working now. Please, try again later"
+//                } else {
+//                    let ac = UIAlertController(title: "Success", message: "You have just succefully added new car", preferredStyle: .alert)
+//                    ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
+//                        self.navigationController?.popToRootViewController(animated: true)
+//                    })
+//                    self.present(ac, animated: true)
+//                }
+//            }
+//            let database = Firestore.firestore()
+//            database.collection("cars")
+//                .whereField("email", isEqualTo: self.userEmail!)
+//                .getDocuments() { (querySnapshot, error) in
+//                    if error != nil {
+//                        let ac = UIAlertController(title: "Error", message: "Can't update database field.", preferredStyle: .alert)
+//                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+//                        self.present(ac, animated: true)
+//                    } else {
+//                        let document = querySnapshot!.documents.first
+//                        document?.reference.updateData([
+//                            "indicator": "on"
+//                        ])
+//                    }
+//            }
         }
     }
     
