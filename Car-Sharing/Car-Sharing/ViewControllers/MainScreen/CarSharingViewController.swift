@@ -35,7 +35,7 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            Request(id: d.documentID, email: d["email"] as? String ?? "test@Test.com", brand: d["brand"] as? [String] ?? ["brand"], model: d["model"] as? [String] ?? ["model"], indicator: d["indicator"] as? [String] ?? ["off"])
+                            return Request(id: d.documentID, email: d["email"] as? String ?? "test@Test.com", brands: d["brands"] as? [String] ?? ["brand"], models: d["models"] as? [String] ?? ["model"], indicators: d["indicators"] as? [String] ?? ["off"])
                         }
                         self.table.reloadData()
                     }
@@ -71,21 +71,21 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
                     ac.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(ac, animated: true)
                 } else {
-                    cell.name.text = "\(request.brand[indexPath.row]) \(request.model[indexPath.row])"
-                    if request.brand[indexPath.row] == "MERCEDES" {
+                    cell.name.text = "\(request.brands[indexPath.row]) \(request.models[indexPath.row])"
+                    if request.brands[indexPath.row] == "MERCEDES" {
                         cell.logo.image = UIImage(named: "MERCEDES")
-                    } else if request.brand[indexPath.row] == "BMW" {
+                    } else if request.brands[indexPath.row] == "BMW" {
                         cell.logo.image = UIImage(named: "BMW")
-                    } else if request.brand[indexPath.row] == "PORSCHE" {
+                    } else if request.brands[indexPath.row] == "PORSCHE" {
                         cell.logo.image = UIImage(named: "PORSCHE")
-                    } else if request.brand[indexPath.row] == "FERRARI" {
+                    } else if request.brands[indexPath.row] == "FERRARI" {
                         cell.logo.image = UIImage(named: "FERRARI")
                     } else {
                         cell.logo.image = nil
                     }
-                    if request.indicator[indexPath.row] == "on" {
+                    if request.indicators[indexPath.row] == "on" {
                         cell.indicator.backgroundColor = .systemGreen
-                    } else if request.indicator[indexPath.row] == "off" {
+                    } else if request.indicators[indexPath.row] == "off" {
                         cell.indicator.backgroundColor = .systemRed
                     } else {
                         cell.indicator.backgroundColor = .systemYellow
@@ -100,7 +100,7 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
         
         let ac = UIAlertController(title: "Choose", message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Borrow / Return", style: .default){_ in
-            if request.indicator[indexPath.row] == "on" {
+            if request.indicators[indexPath.row] == "on" {
                 let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to borrow?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "No", style: .destructive))
                 ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
@@ -122,7 +122,7 @@ class CarSharingViewController: UIViewController, UITableViewDataSource, UITable
                     self.table.reloadData()
                 })
                 self.present(ac, animated: true)
-            } else if request.indicator[indexPath.row] == "off" {
+            } else if request.indicators[indexPath.row] == "off" {
                 let ac = UIAlertController(title: "Confirmation", message: "Are you sure that you want to return?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "No", style: .destructive))
                 ac.addAction(UIAlertAction(title: "Сonfirm", style: .default) {_ in
