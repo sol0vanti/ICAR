@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dbx-9Z-lFm">
-                                <rect key="frame" x="0.0" y="113" width="430" height="705"/>
+                                <rect key="frame" x="0.0" y="113" width="430" height="785"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="A3Y-gw-IP5" customClass="CarSharingTableViewCell" customModule="Car_Sharing" customModuleProvider="target">
@@ -68,50 +68,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iw5-Du-bNj">
-                                <rect key="frame" x="60" y="838" width="300" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="X67-d9-Xug"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-a2-dob">
-                                <rect key="frame" x="20" y="848" width="30" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Gfs-C5-b1o"/>
-                                    <constraint firstAttribute="height" constant="20" id="gDO-Td-jGG"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="ellipsis.rectangle" catalog="system" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsA-qj-v3r">
-                                <rect key="frame" x="370" y="838" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="5dI-0w-Leq"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="magnifyingglass.circle.fill" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="Iw5-Du-bNj" firstAttribute="leading" secondItem="cAa-a2-dob" secondAttribute="trailing" constant="10" id="37k-9d-lbn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JsA-qj-v3r" secondAttribute="bottom" constant="20" id="Cx9-1N-DOb"/>
-                            <constraint firstItem="JsA-qj-v3r" firstAttribute="leading" secondItem="Iw5-Du-bNj" secondAttribute="trailing" constant="10" id="Q2e-36-Vw2"/>
                             <constraint firstItem="dbx-9Z-lFm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VT6-ik-fY8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iw5-Du-bNj" secondAttribute="bottom" constant="20" id="aF2-31-cxL"/>
-                            <constraint firstItem="JsA-qj-v3r" firstAttribute="top" secondItem="dbx-9Z-lFm" secondAttribute="bottom" constant="20" id="cLq-TO-ko2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JsA-qj-v3r" secondAttribute="trailing" constant="20" id="f40-S4-2hl"/>
-                            <constraint firstItem="cAa-a2-dob" firstAttribute="centerY" secondItem="Iw5-Du-bNj" secondAttribute="centerY" id="jzI-2K-oC2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dbx-9Z-lFm" secondAttribute="bottom" id="fHV-rr-qdr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbx-9Z-lFm" secondAttribute="trailing" id="pMN-T5-cDv"/>
                             <constraint firstItem="dbx-9Z-lFm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wrP-cl-Plq"/>
-                            <constraint firstItem="Iw5-Du-bNj" firstAttribute="top" secondItem="dbx-9Z-lFm" secondAttribute="bottom" constant="20" id="xUz-lw-pgi"/>
-                            <constraint firstItem="cAa-a2-dob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xfa-JO-g6f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="YJ1-g2-hmp"/>
@@ -634,8 +597,6 @@
         <image name="FERRARI" width="1200" height="1200"/>
         <image name="MERCEDES" width="3500" height="3500"/>
         <image name="PORSCHE" width="781" height="1020"/>
-        <image name="ellipsis.rectangle" catalog="system" width="128" height="79"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
