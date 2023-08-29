@@ -36,7 +36,7 @@ class LogInViewController: UIViewController {
             else {
                 let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarSharingViewController") as! CarSharingViewController
                 destVC.userEmail = self.emailTextField.text
-                self.navigationController?.pushViewController(destVC, animated: true)
+                self.navigationController?.setViewControllers([destVC], animated: true)
             }
         }
     }
